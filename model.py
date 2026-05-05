@@ -8,15 +8,16 @@ class LeakNet(nn.Module):
         self.net = nn.Sequential(
             nn.Linear(input_dim, 64),
             nn.ReLU(),
+            nn.Dropout(0.2),
 
             nn.Linear(64, 64),
             nn.ReLU(),
+            nn.Dropout(0.2),
 
             nn.Linear(64, 32),
             nn.ReLU(),
 
-            nn.Linear(32, 1),
-            nn.Sigmoid()
+            nn.Linear(32, 1)
         )
 
     def forward(self, x):
