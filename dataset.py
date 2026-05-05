@@ -31,8 +31,7 @@ def generate_dataset(n_samples=12000, seed=42):
         L = random.uniform(200.0, 1000.0)          # м
         rho0 = random.uniform(0.65, 0.85)          # кг/м^3
         eta = random.uniform(1.2e-5, 1.8e-5)       # Па*с
-        k_e = random.uniform(3e-5, 2e-4)           # м
-
+        k_e = random.uniform(1e-5, 3e-5)
         # -----------------------------
         # Режим работы
         # -----------------------------

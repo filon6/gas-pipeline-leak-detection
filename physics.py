@@ -16,9 +16,13 @@ def reynolds_number(d, v, rho, eta):
 def friction_coefficient(k_e, d, Re):
     if Re <= 0:
         return None
-    if Re < 2300:
-        return 64.0 / Re
-    return 0.11 * ((k_e / d) + (68.0 / Re)) ** 0.25
+
+    value = (158.0 / Re) + (2.0 * k_e / d)
+
+    if value <= 0:
+        return None
+
+    return 0.067 * value**0.2
 
 
 def resistance_coefficient(lam, d, rho0):
