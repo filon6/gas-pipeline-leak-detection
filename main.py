@@ -129,6 +129,8 @@ if __name__ == "__main__":
     plt.legend()
     plt.grid()
     plt.title("Обучение")
+    plt.xlabel("Эпоха обучения")
+    plt.ylabel("Значение функции потерь")
     plt.savefig("figures/train.png", dpi=300)
     plt.show()
 
@@ -139,6 +141,8 @@ if __name__ == "__main__":
     plt.plot([mn, mx], [mn, mx])
     plt.grid()
     plt.title("Гибридная модель")
+    plt.xlabel("Истинная координата утечки, м")
+    plt.ylabel("Предсказанная координата утечки, м")
     plt.savefig("figures/hybrid.png", dpi=300)
     plt.show()
 
@@ -147,7 +151,9 @@ if __name__ == "__main__":
     plt.figure(figsize=(8,5))
     plt.hist(errors, bins=40)
     plt.grid()
-    plt.title("Ошибки")
+    plt.xlabel("Ошибка предсказания, м")
+    plt.ylabel("Количество наблюдений")
+    plt.title("Гистограмма ошибок гибридной модели")
     plt.savefig("figures/errors.png", dpi=300)
     plt.show()
 
@@ -160,9 +166,9 @@ if __name__ == "__main__":
 
     plt.plot([mn, mx], [mn, mx])
 
-    plt.xlabel("Истинное x, м")
-    plt.ylabel("Формула x, м")
-    plt.title("Аналитическая формула")
+    plt.xlabel("Истинная координата утечки, м")
+    plt.ylabel("Координата, рассчитанная по формуле, м")
+    plt.title("Аналитическая формула: истинные и рассчитанные координаты")
 
     plt.grid(True)
 
